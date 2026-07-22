@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cockpit AR</title>
+
+<script type="module"
+src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
+</script>
+
+<style>
+html,body{
+    margin:0;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    background:#1a1a1a;
+}
+
+model-viewer{
+    width:100%;
+    height:100%;
+}
+
+#info{
+    position:absolute;
+    top:15px;
+    left:15px;
+    color:white;
+    font-family:Arial;
+    background:rgba(0,0,0,.55);
+    padding:10px;
+    border-radius:8px;
+    z-index:10;
+}
+</style>
+
+</head>
+
+<body>
+
+<div id="info">
+<h3>Cockpit GTR S8</h3>
+<p>Appuie sur <b>Voir dans votre espace</b>.</p>
+</div>
+
+<model-viewer
+src="cockpit_sceneviewer.glb"
+camera-controls
+auto-rotate
+shadow-intensity="1"
+environment-image="neutral"
+ar
+ar-modes="scene-viewer webxr quick-look">
+</model-viewer>
+
+</body>
+</html>
