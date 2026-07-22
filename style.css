@@ -1,0 +1,8 @@
+html,body{margin:0;height:100%;font-family:Arial,sans-serif;background:linear-gradient(180deg,#0f172a,#111827);overflow:hidden}
+#loader{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:#0b1120;color:white;z-index:10}
+.bar{width:260px;height:8px;background:#334155;border-radius:99px;overflow:hidden}
+#progress{height:100%;width:0;background:#60a5fa;transition:.2s}
+.panel{position:fixed;left:20px;bottom:20px;background:rgba(255,255,255,.08);backdrop-filter:blur(12px);padding:16px;border-radius:16px;color:#fff;max-width:320px}
+button{padding:10px 14px;border:none;border-radius:10px;cursor:pointer}
+#arButton{background:#2563eb;color:#fff}
+.buttons{display:flex;gap:10px;margin-top:10px}

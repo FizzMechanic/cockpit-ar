@@ -2,59 +2,36 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Cockpit AR</title>
-
-<script type="module"
-src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
-</script>
-
-<style>
-html,body{
-    margin:0;
-    width:100%;
-    height:100%;
-    overflow:hidden;
-    background:#1a1a1a;
-}
-
-model-viewer{
-    width:100%;
-    height:100%;
-}
-
-#info{
-    position:absolute;
-    top:15px;
-    left:15px;
-    color:white;
-    font-family:Arial;
-    background:rgba(0,0,0,.55);
-    padding:10px;
-    border-radius:8px;
-    z-index:10;
-}
-</style>
-
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AR Viewer Pro</title>
+<link rel="stylesheet" href="style.css">
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
 </head>
-
 <body>
+<div id="loader"><div><h2>Chargement…</h2><div class="bar"><div id="progress"></div></div></div></div>
 
-<div id="info">
-<h3>Cockpit GTR S8</h3>
-<p>Appuie sur <b>Voir dans votre espace</b>.</p>
-</div>
-
-<model-viewer
-src="cockpit_sceneviewer.glb"
+<model-viewer id="viewer"
+src="models/cockpit_sceneviewer.glb"
 camera-controls
-auto-rotate
-shadow-intensity="1"
-environment-image="neutral"
+touch-action="pan-y"
 ar
-ar-modes="scene-viewer webxr quick-look">
+ar-modes="scene-viewer webxr quick-look"
+shadow-intensity="1"
+shadow-softness="1"
+environment-image="neutral"
+exposure="1.1"
+style="width:100%;height:100vh;background:transparent;">
+<button slot="ar-button" id="arButton">📱 Voir dans ma pièce</button>
 </model-viewer>
 
+<div class="panel">
+<h1>AR Viewer Pro</h1>
+<p id="dims">Dimensions : analyse…</p>
+<div class="buttons">
+<button id="reset">🔄 Réinitialiser</button>
+<button id="fullscreen">⛶ Plein écran</button>
+</div>
+</div>
+<script src="script.js"></script>
 </body>
 </html>
